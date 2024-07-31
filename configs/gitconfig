@@ -1,0 +1,9 @@
+[user]
+  name = "Parv Gupta"
+  email = 85178397+gptparv@users.noreply.github.com
+  
+[github]
+  user = gptparv
+
+[init]
+  defaultBranch = main

@@ -1,0 +1,11 @@
+export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
+
+# Source brew for the shell
+if [[ -f "/opt/homebrew/bin/brew" ]] then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
+eval $(thefuck --alias)
+
+# Created by `pipx` on 2024-05-27 20:04:39
+export PATH="$PATH:/Users/parvgupta/.local/bin"

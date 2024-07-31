@@ -1,0 +1,42 @@
+---
+- defaults:
+    link:
+      relink: true
+    brewfile:
+      stdout: true
+      stderr: true
+      include: ['tap', 'brew', 'cask', 'mas', 'vscode']
+    shell:
+      stdout: true
+      stderr: true
+
+- clean: ['~']
+
+- link:
+    $HOME/.zprofile: configs/zprofile
+    ~/.zshrc: configs/zshrc
+    $HOME/.gitconfig: configs/gitconfig
+    ~/.p10k.zsh: configs/p10k.zsh
+    ~/.tool-versions: configs/tool-versions
+    $XDG_CONFIG_HOME/wezterm/wezterm.lua: 
+      path: configs/wezterm/wezterm.lua
+      create: true
+    ~/.config/nvim: configs/nvim
+    ~/.config/alacritty.toml: configs/alacritty.toml
+
+- shell:
+    - [git submodule update --init --recursive, Install/Update submodules]
+    - [chmod +x src/brew; ./src/brew, Install Homebrew, update if already present]
+
+- brewfile:
+    file: Brewfile
+
+- asdf:
+  - plugin: terraform
+  - plugin: python
+  - plugin: kubectl
+  - plugin: kubectx
+  - plugin: helm
+  - plugin: nodejs
+  - plugin: yarn
+  - plugin: java
