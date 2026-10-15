@@ -1,15 +1,27 @@
 #!/bin/bash
 set -e
 
+# List of packages to check and install
 packages=(
   "npm:cc-safety-net"
   "npm:pi-hashline-edit-pro"
   "npm:pi-lens"
+  "npm:@sting8k/pi-droid-styling"
+  "git:github.com/alexgreensh/token-optimizer"
+  "npm:pi-agent-modes"
 )
 
+# Get list of installed packages
+installed_packages=$(pi list | grep -v "^User packages:" | grep -v "^$" | awk '{print $1}')
+
+# Install only packages that are not already installed
 for package in "${packages[@]}"; do
-  echo "Installing $package..."
-  pi install "$package"
+  if ! echo "$installed_packages" | grep -q "^${package}$"; then
+    echo "Installing $package..."
+    pi install "$package"
+  else
+    echo "Skipping $package (already installed)"
+  fi
 done
 
 echo "All packages installed successfully."

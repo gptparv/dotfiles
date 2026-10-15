@@ -1,0 +1,15 @@
+{
+  "lastChangelogVersion": "1.2.0",
+  "packages": [
+    "npm:cc-safety-net",
+    "npm:pi-hashline-edit-pro",
+    "npm:pi-lens",
+    "npm:@sting8k/pi-droid-styling",
+    "git:github.com/alexgreensh/token-optimizer",
+    "npm:pi-agent-modes"
+  ],
+  "theme": "qoder-cli",
+  "enableInstallTelemetry": false,
+  "defaultProjectTrust": "ask",
+  "tuiMode": "fullscreen"
+}
