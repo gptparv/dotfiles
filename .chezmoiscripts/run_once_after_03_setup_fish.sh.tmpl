@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+set -Eeuo pipefail
+
+readonly FISH_PATH="/opt/homebrew/bin/fish"
+
+[[ -x "$FISH_PATH" ]] || {
+  echo "Error: Fish not found at $FISH_PATH" >&2
+  exit 1
+}
+
+if ! grep -Fxq "$FISH_PATH" /etc/shells; then
+  echo "Adding Fish to /etc/shells..."
+  printf '%s\n' "$FISH_PATH" | sudo tee -a /etc/shells >/dev/null
+fi
+
+CURRENT_SHELL="$(dscl . -read "/Users/$(id -un)" UserShell |
+  sed 's/^UserShell: //')"
+
+if [[ "$CURRENT_SHELL" != "$FISH_PATH" ]]; then
+  echo "Changing default shell to Fish..."
+  chsh -s "$FISH_PATH"
+else
+  echo "Fish is already the default shell."
+fi
+
