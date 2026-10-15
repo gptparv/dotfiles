@@ -1,0 +1,15 @@
+#!/bin/bash
+set -e
+
+packages=(
+  "npm:cc-safety-net"
+  "npm:pi-hashline-edit-pro"
+  "npm:pi-lens"
+)
+
+for package in "${packages[@]}"; do
+  echo "Installing $package..."
+  pi install "$package"
+done
+
+echo "All packages installed successfully."
