@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+set -Eeuo pipefail
+
+readonly FISH_BIN="/opt/homebrew/bin/fish"
+readonly FISHER_PATH="$HOME/.config/fish/functions/fisher.fish"
+
+if [ ! -x "$FISH_BIN" ]; then
+  echo "Fish not found at $FISH_BIN. Make sure brew bundle installed it."
+  exit 1
+fi
+
+if [ ! -f "$FISHER_PATH" ]; then
+  echo "Installing Fisher plugin manager for Fish..."
+  "$FISH_BIN" -c 'curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher'
+else
+  echo "Fisher already installed at $FISHER_PATH"
+fi
+
+# fish_plugins hash: {{ include "dot_config/fish/fish_plugins" | sha256sum }}
+"$FISH_BIN" -c 'fisher update'
