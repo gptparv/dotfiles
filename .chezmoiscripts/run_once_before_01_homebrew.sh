@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+set -e
+
+if [[ -x /opt/homebrew/bin/brew ]]; then
+	echo "Homebrew already installed"
+	exit 0
+fi
+
+echo "Installing Homebrew..."
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
