@@ -6,7 +6,8 @@
     "npm:pi-lens",
     "npm:@sting8k/pi-droid-styling",
     "git:github.com/alexgreensh/token-optimizer",
-    "npm:pi-agent-modes"
+    "npm:pi-agent-modes",
+    "npm:@gotgenes/pi-permission-system"
   ],
   "theme": "qoder-cli",
   "enableInstallTelemetry": false,
