@@ -1,5 +1,13 @@
 packages:
   darwin:
+    taps:
+    - "azure/kubelogin"
+    - "boolean-maybe/tap"
+    - "leg100/tap"
+    - "localstack/tap"
+    - "slp/krunkit"
+    - "xwmx/taps"
+    - "yvgude/lean-ctx"
     brews:
     - "argocd"
     - "aria2"
@@ -95,7 +103,6 @@ packages:
     - "zsh-autosuggestions"
     - "azure/kubelogin/kubelogin"
     - "boolean-maybe/tap/tiki"
-    - "jundot/omlx/omlx"
     - "slp/krunkit/krunkit"
     - "xwmx/taps/nb"
     - "yvgude/lean-ctx/lean-ctx"
@@ -134,10 +141,10 @@ packages:
     - "tablen"
     - "tablepro"
     - "terminal-browser"
-    - "ticktick"
     - "unsloth"
     - "utm"
     - "visual-studio-code"
     - "vlc"
     - "whimsical"
     - "zen"
+
