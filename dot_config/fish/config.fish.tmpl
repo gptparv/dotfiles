@@ -4,4 +4,13 @@ set -gx EDITOR code
 set -gx HOMEBREW_NO_ANALYTICS 1
 set -gx PATH $HOME/bin $PATH
 
+abbr --add czd chezmoi diff -S ~/ghq/github.com/gptparv/dotfiles
+abbr --add czap chezmoi apply -S ~/ghq/github.com/gptparv/dotfiles
+abbr --add czs chezmoi status -S ~/ghq/github.com/gptparv/dotfiles
+abbr --add czc chezmoi cd -S ~/ghq/github.com/gptparv/dotfiles
+abbr --add cza chezmoi add -S ~/ghq/github.com/gptparv/dotfiles
+
+abbr --add lg lazygit
+
 fish_add_path --path --move --prepend "$HOME/.magnitude/bin"
+
