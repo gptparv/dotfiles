@@ -1,0 +1,25 @@
+# Green Night - Ghostty Theme
+# https://github.com/end/Green-night-theme
+
+background = #171C19
+foreground = #FAFFFB
+cursor-color = #4BEA9A
+selection-background = #2D3831
+selection-foreground = #FAFFFB
+
+palette = 0=#2D332F
+palette = 1=#FF7A72
+palette = 2=#4BEA9A
+palette = 3=#FFF06A
+palette = 4=#C4B5FF
+palette = 5=#FF8DB5
+palette = 6=#5FFFC0
+palette = 7=#FAFFFB
+palette = 8=#7FC99B
+palette = 9=#FF9A92
+palette = 10=#6DFFC9
+palette = 11=#FFF58F
+palette = 12=#D5CAFF
+palette = 13=#FFA9C8
+palette = 14=#8BFFE2
+palette = 15=#FFFFFF
