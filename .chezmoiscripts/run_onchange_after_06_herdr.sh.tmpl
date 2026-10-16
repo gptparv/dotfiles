@@ -1,0 +1,21 @@
+#!/bin/bash
+set -e
+
+# List of herdr plugins to check and install
+packages=(
+  "herdr.auto-title"
+)
+
+# Get list of installed plugins
+installed_plugins=$(herdr plugin list | grep -v "^User packages:" | grep -v "^$" | grep "herdr\." | cut -d' ' -f2)
+
+for plugin in "${packages[@]}"; do
+  if ! echo "$installed_plugins" | grep -q "^${plugin}$"; then
+    echo "Installing $plugin..."
+    herdr plugin install "$plugin"
+  else
+    echo "Skipping $plugin (already installed)"
+  fi
+done
+
+echo "All herdr plugins installed successfully."
