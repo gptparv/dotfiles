@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+set -e
+
+echo "Installing codebase-memory-mcp..."
+
+if command -v codebase-memory-mcp &> /dev/null; then
+    echo "codebase-memory-mcp is already installed"
+    exit 0
+fi
+
+curl -fsSL https://raw.githubusercontent.com/DeusData/codebase-memory-mcp/main/install.sh | bash
+
+echo "Installation complete!"
